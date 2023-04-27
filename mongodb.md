@@ -111,9 +111,9 @@ db.collectionName.aggregate(pipeline, { allowDiskUse : true });
 ```
 
 ### Explain the role of the Oplog in MongoDB replication. How is it used to synchronize data between primary and secondary nodes, and what are some potential issues that can arise?
-The Oplog (operation log) is a special capped collection in MongoDB that keeps a rolling record of all write operations on the primary node. It is used in replication to synchronize data between primary and secondary nodes. Secondary nodes tail the Oplog and apply operations to their local data sets. Potential issues with Oplog synchronization include:
-- *Lagging secondary nodes*: If secondary nodes cannot keep up with the primary node's write operations, they may lag behind, causing delays in replication.
-- *Oplog size limitations*: If the Oplog size is too small, it may not hold enough operations, resulting in secondary nodes not being able to catch up if they fall too far behind.
+The Oplog (operation log) is a special capped collection in MongoDB that keeps a rolling record of all write operations on the primary node. It is used in replication to synchronize data between primary and secondary nodes. Secondary nodes tail the Oplog and apply operations to their local data sets. Potential issues with Oplog synchronization include:  
+-  *Lagging secondary nodes*: If secondary nodes cannot keep up with the primary node's write operations, they may lag behind, causing delays in replication.
+-  *Oplog size limitations*: If the Oplog size is too small, it may not hold enough operations, resulting in secondary nodes not being able to catch up if they fall too far behind.
 
 ### Describe MongoDB's concurrency control mechanisms. How do they differ from those in traditional relational databases, and what are the implications for application development?
 MongoDB's concurrency control mechanisms include:
